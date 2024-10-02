@@ -24,7 +24,7 @@ function Signup() {
             return handleError('name,email,password are required')
         }
         try{
-            const url = "http://backend:8080/auth/signup";
+            const url = "http://backend:8080/api/auth/signup";
             const response = await fetch(url,{
                 method : "POST",
                 headers: {
