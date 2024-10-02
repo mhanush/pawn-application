@@ -1,7 +1,12 @@
-FROM node:16.20.2
+# Use Node.js to build the React app
+FROM node:16.20.2 as build
 WORKDIR /app
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["npm","start"]
+COPY . ./
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

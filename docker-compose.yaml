@@ -1,18 +1,23 @@
 version: '3'
 services:
   frontend:
-    build: frontend
+    build:
+      context: ./frontend  # Set the context to the frontend directory
+      dockerfile: Dockerfile  # Specify the Dockerfile name if it's not default
     ports:
-      - "3000:3000"
+      - "3000:80"  # Exposing Nginx port 80
     networks:
       - pawn_application_network
 
   backend:
-    build: backend
+    build:
+      context: ./backend  # Set the context to the backend directory
+      dockerfile: Dockerfile  # Specify the Dockerfile name if it's not default
     ports:
       - "8080:8080"
     networks:
       - pawn_application_network
+
   nginx:
     image: nginx:latest
     ports:

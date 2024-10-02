@@ -5,6 +5,9 @@ const CustomerModel = require("../Models/Customer");
 const signup = async(req,res)=>{
     try{
         const {name,email,password} = req.body;
+        if (!name || !email || !password) {
+            return res.status(400).json({ message: "All fields are required", success: false });
+        }
         const user = await UserModel.findOne({email});
         if(user){
             return res.status(409)
@@ -29,6 +32,9 @@ const signup = async(req,res)=>{
 const login = async(req,res)=>{
     try{
         const {email,password} = req.body;
+        if (!email || !password) {
+            return res.status(400).json({ message: "Email and password are required", success: false });
+        }
         const user = await UserModel.findOne({email});
         if(!user){
             return res.status(403)
@@ -396,7 +402,7 @@ const release = async(req,res)=>{
         const date = new Date();
         const customer = await CustomerModel.findOne({email,id});
         if(!customer){
-            return res.status(403)
+            return res.status(404)
                 .json({message:"No such item found",success:false});
         }
         if(customer.status && customer.amountpaidstatus){

@@ -1,7 +1,8 @@
+# Use Node.js for the backend
 FROM node:16.20.2
 WORKDIR /app
-COPY package.json .
+COPY package.json . 
 RUN npm install
 COPY . .
 EXPOSE 8080
-CMD ["npm","start"]
+CMD ["node", "index.js"]  
