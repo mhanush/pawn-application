@@ -24,7 +24,7 @@ function Signup() {
             return handleError('name,email,password are required')
         }
         try{
-            const url = "http://13.235.17.159:8080/api/auth/signup";
+            const url = "http://13.235.17.159:8080/auth/signup";
             const response = await fetch(url,{
                 method : "POST",
                 headers: {

@@ -35,7 +35,7 @@ function Edit() {
     const EditProduct = async ()=>{
         const EditInfo = {id,mobileNo,name,address,city,type,model,gram,rateofintrest,amount,amountpaidstatus,status};
         try {
-            const url = "http://backend:8080/products/edit";
+            const url = "http://13.235.17.159:8080/products/edit";
             const response = await fetch(url,{
                 method : "PUT",
                 headers: {

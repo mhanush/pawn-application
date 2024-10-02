@@ -57,7 +57,7 @@ function Release() {
             amountPaid: amountpaid
         };
         try {
-            const url = "http://backend:8080/products/release";
+            const url = "http://13.235.17.159:8080/products/release";
             const headers = {
                 method: 'POST',
                 headers: {

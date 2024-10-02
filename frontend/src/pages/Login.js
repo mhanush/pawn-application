@@ -24,7 +24,7 @@ function Login() {
             return handleError('email,password are required')
         }
         try{
-            const url = "http://backend:8080/auth/login";
+            const url = "http://13.235.17.159:8080/auth/login";
             const response = await fetch(url,{
                 method : "POST",
                 headers: {
