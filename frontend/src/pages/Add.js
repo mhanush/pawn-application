@@ -31,7 +31,7 @@ function Add() {
         const SearchInfo = {};
         if (mobileNo) SearchInfo.mobileNo = mobileNo;
         try {
-            const url = "http://localhost:8080/products/view";
+            const url = "http://backend:8080/products/view";
             const headers = {
                 method: 'POST',
                 headers: {
@@ -55,7 +55,7 @@ function Add() {
     const AddProduct = async ()=>{
         const AddInfo = {mobileNo,name,address,city,type,model,gram,rateofintrest,amount};
         try {
-            const url = "http://localhost:8080/products/add";
+            const url = "http://backend:8080/products/add";
             const headers = {
                 method: 'POST',
                 headers: {

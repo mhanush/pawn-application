@@ -27,7 +27,7 @@ function Release() {
         if (id) SearchInfo.id = id;
         if (mobileNo) SearchInfo.mobileNo = mobileNo;
         try {
-            const url = "http://localhost:8080/products/view";
+            const url = "http://backend:8080/products/view";
             const headers = {
                 method: 'POST',
                 headers: {
@@ -57,7 +57,7 @@ function Release() {
             amountPaid: amountpaid
         };
         try {
-            const url = "http://localhost:8080/products/release";
+            const url = "http://backend:8080/products/release";
             const headers = {
                 method: 'POST',
                 headers: {

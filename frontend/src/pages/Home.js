@@ -54,7 +54,7 @@ function Home() {
         totalInterest: 0
       });
       setNoDataMessage(""); 
-      const url = `http://localhost:8080/products${timeRange ? '/' + timeRange : ''}`;
+      const url = `http://backend:8080/products${timeRange ? '/' + timeRange : ''}`;
       const headers = {
         headers: {
           'Authorization': localStorage.getItem('token')

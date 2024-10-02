@@ -25,7 +25,7 @@ function Search() {
         if (id) SearchInfo.id = id;
         if (mobileNo) SearchInfo.mobileNo = mobileNo;
         try {
-            const url = "http://localhost:8080/products/view";
+            const url = "http://backend:8080/products/view";
             const headers = {
                 method: 'POST',
                 headers: {
